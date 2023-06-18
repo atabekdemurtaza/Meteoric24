@@ -15,11 +15,11 @@ def product_list(request, category_slug=None):
         'categories': categories,
         'products': products
     }
-    return render(request, 'shop/product/list.html', context)
+    return render(request, 'store/product/list.html', context)
 
 def product_detail(request, id, slug):
     product = get_object_or_404(Product, id=id, slug=slug, available=True)
     context = {
         'product': product
     }
-    return render(request, 'shop/product/detail.html', context)
+    return render(request, 'store/product/detail.html', context)
